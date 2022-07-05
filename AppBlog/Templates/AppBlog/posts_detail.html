@@ -1,0 +1,15 @@
+{% extends "AppBlog/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<p>Título: <i>{{posts.titulo}}</i></p>
+<p>Subtítulo: <i>{{posts.subtitulo}}</i></p>
+<p>Descripción: <i>{{posts.cuerpo|safe}}</i></p>
+<p>Autor: <i>{{posts.autor}}</i></p>
+<p>Fecha: <i>{{posts.fecha}}</i></p>
+<p>Imágen: <img src={{posts.imagen}}></p>
+
+
+<p>
+  <a href="{% url 'inicio' %}">Volver al inicio</a>
+</p>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "AppBlog/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<h1>Estos son los autores de las publicaciones espaciales del blog</h1>
+
+  <form method="POST">{% csrf_token %}
+  <p>Estás seguro de eliminar el autor del post "{{object}}"</p>
+  <input type="submit" value="SI">
+  
+  <a href="{% url 'autores_lista' %}" class = "btn btn-success"> No, volver al listado</a>
+ 
+  </form>  
+
+{% endif %}    
+      
+
+  
+
+
+{% endblock %}

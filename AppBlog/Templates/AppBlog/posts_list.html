@@ -1,0 +1,32 @@
+{% extends "AppBlog/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<h1>Este es el listado de Publicaciones de los cibernautas</h1>
+{% for post in object_list %} <!-- object_list es una lista de posts -->
+<br>
+<br>
+<div class="card mb-4">
+  
+  <div class="card-body">
+    <li>{{post}}</li>
+
+  </div>
+</div>  
+
+
+<button>
+  <a href="{% url 'posts_detalle' post.id %}">Detalle</a>
+</button>
+<button>
+  <a href="{% url 'posts_editar' post.id%}">Editar</a>
+</button>
+<button>
+  <a href="{% url 'posts_borrar' post.id %}">Borrar</a>
+</button>
+{% endfor %}
+<br>
+<br>
+<button>
+  <a href="{% url 'posts_crear' %}">Crear</a>
+</button>
+{% endblock %}

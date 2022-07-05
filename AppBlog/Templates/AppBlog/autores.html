@@ -1,0 +1,11 @@
+{% extends "AppBlog/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<h1>Estos son los autores del Blog</h1>
+{% for autor in object_list %} <!-- object_list es una lista de autores -->
+
+
+<li>{{autor}}</li>
+{% endfor %}
+{% endblock %}
+

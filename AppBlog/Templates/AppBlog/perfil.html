@@ -1,0 +1,30 @@
+{% extends "AppBlog/padre.html" %}
+{% load static %}
+{% block section_name %}
+<h3>Perfil</h3>
+{% endblock %}
+{% block contenidoQueCambia %}
+<h1>Perfil de {{user}}</h1>
+
+<div class="card mb-4">
+  
+    <div class="card-body">
+        {% if user.is_authenticated %}
+     
+        <li>Nombre: {{user.first_name}}</li>
+        <li>Apellido: {{user.last_name}}</li>
+        <li>Email: {{user.email}}</li>
+   
+   {% endif %} 
+   </ul>       
+   
+  
+    </div>
+  </div>  
+
+
+<p>
+    <a href="{% url 'editar_perfil' %}">Editar perfil</a>
+ </p>
+{% endblock %}
+

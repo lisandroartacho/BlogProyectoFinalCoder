@@ -1,0 +1,8 @@
+{% extends "AppBlog/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<h1>Estas son las publicaciones del Blog</h1>
+{% for post in object_list %} <!-- object_list es una lista de posts -->
+<li>{{post}}</li>
+{% endfor %}
+{% endblock %}
